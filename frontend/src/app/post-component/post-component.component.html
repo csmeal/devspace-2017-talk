@@ -1,0 +1,30 @@
+
+  <mat-list>
+    <mat-list-item *ngFor="let post of posts" class="post">
+      <p (click)="urlClick(post.url);">{{post.title}}</p>
+      <button (click)="showComments(post)">Show Comments</button>
+      <button (click)="deletePost(post)">Delete</button>
+      <div *ngIf="post.show">
+          <mat-list-item *ngFor="let comment of post.comments" class="comment">
+              <p >{{comment.text}}</p>
+              <button (click)="deleteComment(post)">Delete</button>
+          </mat-list-item>
+          <mat-list-item>
+              <mat-form-field class="example-full-width">
+                  <input #comment matInput placeholder="Comment">
+                </mat-form-field>
+                <button (click)="submitComment(comment.value, post); comment.value='';">Submit</button>
+          </mat-list-item>
+      </div>
+    </mat-list-item>
+    <mat-list-item>
+                <mat-form-field class="example-full-width">
+                  <input #title matInput placeholder="Title">
+                </mat-form-field>
+                <mat-form-field  class="example-full-width">
+                    <input #url matInput placeholder="Url">
+                  </mat-form-field>
+              <button (click)="submitPost(title.value, url.value); title.value='';url.value=''">Submit</button>
+    </mat-list-item>
+  </mat-list>
+
