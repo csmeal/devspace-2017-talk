@@ -1,7 +1,10 @@
 #!/bin/bash
 sudo su
 yum update -y
-yum install httpd php php-mysql stress -y
+yum install httpd git stress -y
+git clone https://github.com/csmeal/devspace-2017-talk.git
+
+
 cd /etc/httpd/conf
 cp httpd.conf httpdconfbackup.conf
 rm -rf httpd.conf
