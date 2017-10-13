@@ -2,7 +2,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { CommentComponentComponent } from './comment-component/comment-component.component';
 import { PostComponentComponent } from './post-component/post-component.component';
 import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -16,7 +15,6 @@ import { PostService } from './post.service';
 @NgModule({
   declarations: [
     AppComponent,
-    CommentComponentComponent,
     PostComponentComponent
   ],
   imports: [
