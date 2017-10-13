@@ -1,0 +1,3 @@
+ng build --prod --aot
+set to public
+set index to host
